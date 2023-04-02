@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchInput() {
+function SearchInput({ handleGuessSubmit }) {
   const [guess, setGuess] = React.useState('');
 
   return <>
@@ -8,9 +8,9 @@ function SearchInput() {
     onSubmit={event => {
       // prevent page from refreshing
       event.preventDefault();
-      
+
       // log input field to console
-      console.log({guess});
+      handleGuessSubmit(guess);
 
       // reset input field
       setGuess('');
@@ -27,7 +27,8 @@ function SearchInput() {
       onChange={event => {
         const nextGuess = event.target.value.toUpperCase();
         setGuess(nextGuess);
-        }} />
+        }}
+        />
   </form>
 
 </>
