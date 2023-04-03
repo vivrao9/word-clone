@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchInput({ handleGuessSubmit }) {
+function SearchInput({ handleGuessSubmit, lastGuess, answer, gameState }) {
   const [guess, setGuess] = React.useState('');
 
   return <>
@@ -28,6 +28,7 @@ function SearchInput({ handleGuessSubmit }) {
         const nextGuess = event.target.value.toUpperCase();
         setGuess(nextGuess);
         }}
+      disabled={gameState === 'done!'}
         />
   </form>
 

@@ -10,7 +10,6 @@ import { checkGuess } from '../../game-helpers';
 // import { NUM_OF_GUESSES_ALLOWED } from '../../constants.js';
 
 function Guess({ guess, answer }) {
-  console.log(checkGuess(guess, answer));
   
   return (
     <p className="guess">
