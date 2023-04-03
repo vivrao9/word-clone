@@ -9,11 +9,11 @@ import {range} from '../../utils.js';
 // import SearchInput from '../SearchInput';
 import Guess from '../Guess';
 
-function Guesses({ guesses }) {
+function Guesses({ guesses, answer }) {
   return <>
     <div className="guess-results">
     {range(NUM_OF_GUESSES_ALLOWED).map((num) => (
-        <Guess guess={guesses[num]} key={num}/>
+        <Guess guess={guesses[num]} key={num} answer={answer}/>
     ))}
     </div>
   </>;
